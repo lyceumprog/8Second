@@ -34,6 +34,7 @@
     <Compile Include="Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\TimerViewModel.cs" />
     <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="IAudio.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
@@ -41,6 +42,7 @@
     <Folder Include="Model\" />
     <Folder Include="Base\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -55,6 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Files\tick.wav" />
+    <None Include="Files\stopwatch_running.mp3" />
+    <None Include="Files\timer_or_desk_bell.mp3" />
+    <None Include="Files\ding_persevy.wav" />
+    <None Include="Files\test.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.231\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

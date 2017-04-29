@@ -21,10 +21,14 @@ namespace SecondTimer
 			set { _timerText = value; OnPropertyChanged(); }
 		}
 
+		IAudio audioService;
+
 		public TimerViewModel()
 		{
 			_timerText = "Башла";
 			_timerColor = Constants.BlueColor;
+
+			audioService = DependencyService.Get<IAudio>();
 		}
 
 		public void StartTimer(object sender, EventArgs e)
@@ -36,13 +40,16 @@ namespace SecondTimer
 				{
 					TimerText = "8";
 					TimerColor = Constants.GreenColor;
-					for (int i = 7; i >= 0; i--)
+					for (int i = 8; i > 0; i--)
 					{
-						await Task.Delay(1000);
+						audioService.Tick();
 						TimerText = i.ToString();
+						await Task.Delay(1000);
 					}
 
+					TimerText = "0";
 					TimerColor = Constants.RedColor;
+					audioService.Dong();
 
 					await Task.Delay(3000);
 					TimerText = "Башла";
